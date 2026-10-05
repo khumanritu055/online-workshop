@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Request a Demo</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<section class="demo-wrapper">
+
+  <!-- BUBBLE BACKGROUND -->
+  <ul class="bubbles">
+    <li></li><li></li><li></li><li></li><li></li>
+    <li></li><li></li><li></li><li></li><li></li>
+  </ul>
+
+  <!-- DEMO CARD -->
+  <div class="demo-card">
+    <h2>Request a Demo</h2>
+    <p class="sub-text">
+      Fill the details below and our team will reach out to you
+    </p>
+
+    <form action="/demo-submit" method="POST">
+
+<div class="input-box">
+  <input type="text" name="name" required placeholder=" ">
+  <label>Full Name</label>
+</div>
+
+<div class="input-box">
+  <input type="email" name="email" required placeholder=" ">
+  <label>Email Address</label>
+</div>
+
+<div class="input-box">
+  <input type="tel" name="phone" required placeholder=" ">
+  <label>Mobile Number</label>
+</div>
+<div class="input-box">
+  <input type="text" name="city" required placeholder=" ">
+  <label>City</label>
+</div>
+
+<div class="input-box">
+  <input type="text" name="course" required placeholder=" ">
+  <label>Interested Course</label>
+</div>
+
+<div class="input-box">
+  <input type="text" name="college" placeholder=" ">
+  <label>College / Company</label>
+</div>
+
+<div class="input-box">
+  <select name="experience" required>
+    <option value="">Select Experience</option>
+    <option>Student</option>
+    <option>Fresher</option>
+    <option>Working Professional</option>
+  </select>
+</div>
+
+<div class="input-box">
+  <textarea name="message" rows="3" placeholder=" "></textarea>
+  <label>Message (Optional)</label>
+</div>
+
+<button type="submit" class="demo-btn">Request Demo</button>
+
+</form>
+  </div>
+
+</section>
+
+<audio id="successSound" src="/sounds/success.mp3" preload="auto"></audio>
+
+<script>
+function submitDemo(e){
+  e.preventDefault();
+
+  const sound = document.getElementById("successSound");
+
+  sound.play();
+
+  // jab sound pura ho jaaye
+  sound.onended = () => {
+    window.location.href = "/demo-success";
+  };
+}
+</script>
+
+
+
+</body>
+</html>

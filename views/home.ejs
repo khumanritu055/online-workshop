@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SkillUp Workshops</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1>SkillUp Workshops</h1>
+    <p>Learn new skills online, anytime!</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="/">HOME</a>
+  <!-- LEARN MENU -->
+ <div class="learn-wrapper">
+    <a href="#" id="learnBtn">LEARN▴</a>
+
+    <!-- LEARN POPUP -->
+    <div class="learn-popup" id="learnPopup">
+
+      <div class="popup-column">
+        <h4>Verticals</h4>
+        <a href="/education.html">🎓 Education / Certifications<br>Organizations</a>
+        <a href="/equipment.html">🧰 Equipment Companies</a>
+        <a href="/fitness.html">💪 Fitness & Wellness Experts</a>
+      </div>
+
+      <div class="popup-column">
+        <h4>Use Cases</h4>
+        <a href="/lms.html">💡 Learning Management System</a>
+        <a href="/certification-system.html">✅ Certification Management System</a>
+        <a href="/live-workshop-system.html">📍 Live Workshop Management System</a>
+      </div>
+
+    </div>
+  </div>
+    <a href="/about">ABOUT</a>
+    
+    <div style="text-align:center; margin-top:0px;">
+ <a href="/request-demo" class="demo-btn">REQUEST A DEMO</a>
+</div>
+
+  </nav>
+<main class="container">
+  <h2 class="workshop-title">🚀 Featured Workshops</h2>
+
+  <!-- ================= FEATURED WORKSHOPS ================= -->
+
+<section class="featured-workshops">
+
+  <div class="section-heading">
+    <span>LEARN • BUILD • GROW</span>
+    <h2>Featured Workshops</h2>
+    <p>
+      Join our practical workshops and learn skills directly from
+      industry-focused sessions.
+    </p>
+  </div>
+
+  <div class="featured-container">
+
+    <!-- Web Wizard -->
+    <div class="featured-card">
+
+      <div class="card-icon">
+        💻
+      </div>
+
+      <h3>Web Wizard</h3>
+
+      <p class="workshop-date">
+        Date: 10 March 2026
+      </p>
+
+      <p class="workshop-description">
+        Learn HTML, CSS & JavaScript basics and build your
+        first modern web project.
+      </p>
+
+      <a href="/register" class="register-btn">
+        Register
+      </a>
+
+    </div>
+
+
+    <!-- Cyber Shield -->
+    <div class="featured-card">
+
+      <div class="card-icon">
+        🛡️
+      </div>
+
+      <h3>Cyber Shield</h3>
+
+      <p class="workshop-date">
+        Date: 20 March 2026
+      </p>
+
+      <p class="workshop-description">
+        Introduction to cyber security, online protection
+        and basic security concepts.
+      </p>
+
+      <a href="/register" class="register-btn">
+        Register
+      </a>
+
+    </div>
+
+
+    <!-- Data Explorer -->
+    <div class="featured-card">
+
+      <div class="card-icon">
+        📊
+      </div>
+
+      <h3>Data Explorer</h3>
+
+      <p class="workshop-date">
+        Date: 30 March 2026
+      </p>
+
+      <p class="workshop-description">
+        Learn the basics of data analysis and visualization
+        with practical examples.
+      </p>
+
+      <a href="/register" class="register-btn">
+        Register
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+  <% workshops.forEach(w => { %>
+    <div class="workshop-card">
+      <h3 class="workshop-name"><%= w.name %></h3>
+      <p><strong>Date:</strong> <%= w.date %></p>
+      <p><%= w.description %></p>
+
+      <a href="/register?workshop=<%= w.name %>">
+        <button>Register</button>
+      </a>
+    </div>
+  <% }) %>
+</main>
+  <script>
+  const learnBtn = document.getElementById("learnBtn");
+  const learnPopup = document.getElementById("learnPopup");
+
+  learnBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    if (learnPopup.style.display === "flex") {
+      learnPopup.style.display = "none";
+    } else {
+      learnPopup.style.display = "flex";
+    }
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".learn-wrapper")) {
+      learnPopup.style.display = "none";
+    }
+  });
+</script>
+<section class="content reveal">
+  <h2>Why Our Live Workshops?</h2>
+</section>
+
+  <section class="feature-strip">
+  <a href="/live-workshops" class="feature-box blue">Live Workshops</a>
+  <a href="/industry-experts" class="feature-box pink">Industry Experts</a>
+  <a href="/certificates" class="feature-box purple">Certificates</a>
+  <a href="/career-support" class="feature-box orange">Career Support</a>
+</section>
+
+</section>
+
+</section>
+
+<!-- ===== WORKSHOP FLOW ===== -->
+<section class="workshop-flow">
+  <h2>How Our Workshops Work</h2>
+
+  <div class="flow-steps">
+    <div class="step">
+      <span>01</span>
+      <p>Register for Workshop</p>
+    </div>
+    <div class="step">
+      <span>02</span>
+      <p>Attend Live Session</p>
+    </div>
+    <div class="step">
+      <span>03</span>
+      <p>Hands-on Practice</p>
+    </div>
+    <div class="step">
+      <span>04</span>
+      <p>Get Certificate</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COLOR INFO BANNER ===== -->
+<section class="info-banner">
+  <h2>Learn • Build • Grow</h2>
+  <p>
+    SkillUp Workshops are designed to transform learners into confident
+    professionals through practical, guided and engaging learning experiences.
+  </p>
+</section>
+
+
+
+<!-- Footer -->
+
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- Column 1 -->
+    <div class="footer-col">
+      <h2>SkillUp Workshops</h2>
+      <p>
+        SkillUp Workshops delivers expert-led training, hands-on practical sessions,
+        and industry-focused learning programs.
+        Our mission is to empower students with real-world skills.
+      </p>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Workshops</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="footer-col">
+      <h3>Contact Info</h3>
+      <p>Email: skillup@email.com</p>
+      <p>Phone: +91 98765 43210</p>
+      <p>Location: India</p>
+    </div>
+
+    <!-- Column 4 Newsletter -->
+    <div class="footer-col">
+      <h3>Subscribe Newsletter</h3>
+      <p>Get updates about new workshops.</p>
+      <form class="newsletter">
+        <input type="email" placeholder="Enter your email">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+
+
+
+  <!-- Bottom Line -->
+  <div class="footer-bottom">
+    <p>© 2026 SkillUp Workshops | Designed & Developed by <strong>Ritu Khuman</strong></p>
+  </div>
+
+</footer>
+
+
+
+
+</body>
+</html>
